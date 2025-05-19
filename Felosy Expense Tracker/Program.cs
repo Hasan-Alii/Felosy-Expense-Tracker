@@ -1,3 +1,6 @@
+using Felosy_Expense_Tracker.Data.Contexts;
+using Microsoft.EntityFrameworkCore;
+
 namespace Felosy_Expense_Tracker
 {
     public class Program
@@ -8,6 +11,11 @@ namespace Felosy_Expense_Tracker
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //Dependency Injection
+            builder.Services.AddDbContext<AppDbContext>(options => 
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+            );
 
             var app = builder.Build();
 
