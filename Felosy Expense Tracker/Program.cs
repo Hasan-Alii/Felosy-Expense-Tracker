@@ -17,6 +17,9 @@ namespace Felosy_Expense_Tracker
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
             );
 
+            //Register Syncfusion<sup style="font-size:70%">&reg;</sup> license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NNaF5cXmBCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXlfcXRQQ2ldU0ByXERWYUA=");
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -32,7 +35,7 @@ namespace Felosy_Expense_Tracker
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Categories}/{action=Index}/{id?}");
 
             app.Run();
         }
