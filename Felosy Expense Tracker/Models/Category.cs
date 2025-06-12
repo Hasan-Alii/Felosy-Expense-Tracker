@@ -8,6 +8,7 @@ namespace Felosy_Expense_Tracker.Models
         [Key]
         public int CategoryId { get; set; } // PK
 
+        [Required(ErrorMessage = "Title is required.")]
         [Column(TypeName = "nvarchar(50)")]
         public string Title { get; set; }
 
@@ -16,5 +17,13 @@ namespace Felosy_Expense_Tracker.Models
 
         [Column(TypeName = "nvarchar(10)")]
         public string Type { get; set; } = "Expense";
+
+        [NotMapped]
+        public string? TitleIcon { 
+            get
+            {
+                return this.Icon + " " + this.Title;
+            }
+        }
     }
 }

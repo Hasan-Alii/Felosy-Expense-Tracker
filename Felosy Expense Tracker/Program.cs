@@ -35,7 +35,7 @@ namespace Felosy_Expense_Tracker
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Categories}/{action=Index}/{id?}");
+                pattern: "{controller=Transactions}/{action=Index}/{id?}");
 
             app.Run();
         }
