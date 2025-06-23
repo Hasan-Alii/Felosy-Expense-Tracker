@@ -42,7 +42,7 @@
         <form action="/Categories/Delete/${CategoryId}" method="post">
             @Html.AntiForgeryToken()
             <button type="submit" class="btn btn-sm btn-link no-a-decoration"
-            onclick="return confirm(&quot;Are sure to delete this record?&quot;)">
+            onclick="return confirm('Are you sure of deleting this record')">
                 <i class="fa-solid fa-trash-can fa-lg text-danger"></i>
             </button>
         </form>
