@@ -9,18 +9,18 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Felosy_Expense_Tracker.Data.Migrations
+namespace Felosy_Expense_Tracker.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250504011617_Initial Create")]
-    partial class InitialCreate
+    [Migration("20250622081352_InitCreate")]
+    partial class InitCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "9.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -47,7 +47,7 @@ namespace Felosy_Expense_Tracker.Data.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Category");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Felosy_Expense_Tracker.Models.Transaction", b =>
@@ -74,7 +74,7 @@ namespace Felosy_Expense_Tracker.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Transaction");
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("Felosy_Expense_Tracker.Models.Transaction", b =>

@@ -1,29 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Felosy_Expense_Tracker.Helper;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 
 namespace Felosy_Expense_Tracker.Models
 {
-    public static class Cultures
-    {
-        static Cultures()
-        {
-            EGY = (CultureInfo)CultureInfo.GetCultureInfo("ar-EG").Clone();
-            EGY.NumberFormat.CurrencyPositivePattern = 2;
-        }
-        public static readonly CultureInfo EGY =
-            CultureInfo.GetCultureInfo("en-EG");
-        
-        public static readonly CultureInfo USA =
-            CultureInfo.GetCultureInfo("en-US"); 
-        
-        public static readonly CultureInfo UK =
-            CultureInfo.GetCultureInfo("en-UK");
-        
-        public static readonly CultureInfo KSA =
-            CultureInfo.GetCultureInfo("en-SA");
-    }
-
     public class Transaction
     {
         [Key]
