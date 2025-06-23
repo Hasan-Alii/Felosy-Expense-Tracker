@@ -3,48 +3,42 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Felosy: The Expense Tracker</title>
+    <title>Felosy Fen?: The Expense Tracker</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/29.1.33/bootstrap5-dark.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Felosy_Expense_Tracker.styles.css" asp-append-version="true" />
     <script src="https://cdn.syncfusion.com/ej2/29.1.33/dist/ej2.min.js"></script>
 </head>
 <body class="e-bigger">
-    <partial name="_SideBar"/>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Felosy: The Expense Tracker</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+
+    <partial name="_SideBar" />
+
+    @*     <nav class="navbar sticky-top">
+    <div class="container-fluid py-2 px-4">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="profile-wrapper">
+    <img class="profile-pic" src="~/favicon-32x32.png" />
+    <div class="titles d-flex flex-column ps-5">
+    <header class="mb-0">Felosy Fen? The Expense Tracker</header>
+    </div>
+    </div>
+    <div>
+    <i class="fa-solid fa-bell"></i>
+    <i class="fa-solid fa-message"></i>
+    <img class="profile-pic" src="~/profile-pic.jpg" />
+    </div>
+    </div>
+    </nav> *@
 
     <div class="main-content">
         <div class="container mt-5">
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="@(ViewData["isDashboard"] == null?"col-md-12":"col-md-12")">
                     <main role="main" class="pb-3">
-                        @if(ViewData["isDashboard"] == null)
-                        {
-                            
-                        }
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="d-flex flex-column mb-5">
@@ -61,7 +55,8 @@
                                             }
                                         </div>
                                     </div>
-                                    <ejs-breadcrumb id="breadcrumb">@* separatorTemplate="@Html.Raw("<span class='fa-solid fa-angle-right'></span>")" *@</ejs-breadcrumb>
+                                    <ejs-breadcrumb id="breadcrumb"
+                                                    separatorTemplate="@Html.Raw("<span class='fa-solid fa-angle-right'></span>")"></ejs-breadcrumb>
                                 </div>
                             </div>
                         </div>
@@ -72,11 +67,11 @@
         </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Felosy_Expense_Tracker - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    @* <footer class="border-top footer text-muted">
+    <div class="container">
+    &copy; 2025 - Felosy Fen? Expense Tracker - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+    </footer> *@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
