@@ -14,60 +14,64 @@
     <script src="https://cdn.syncfusion.com/ej2/29.1.33/dist/ej2.min.js"></script>
 </head>
 <body class="e-bigger">
+    @RenderBody()
 
-    <partial name="_SideBar" />
-
-    @*
-    <nav class="navbar sticky-top">
-    <div class="container-fluid py-2 px-4">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <div class="profile-wrapper">
-    <img class="profile-pic" src="~/favicon-32x32.png" />
-    <div class="titles d-flex flex-column ps-5">
-    <header class="mb-0">Felosy Fen? The Expense Tracker</header>
-    </div>
-    </div>
-    <div>
-    <i class="fa-solid fa-bell"></i>
-    <i class="fa-solid fa-message"></i>
-    <img class="profile-pic" src="~/profile-pic.jpg" />
-    </div>
-    </div>
-    </nav>
-    *@
-
-    <div class="main-content">
-        <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="@(ViewData["isDashboard"] == null?"col-md-12":"col-md-12")">
-                    <main role="main" class="pb-3">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="d-flex flex-column mb-5">
-                                    <div class="d-flex mb-1">
-                                        <div class="flex-grow-1">
-                                            <h3 class="fw-bold">@ViewData["PageTitle"]</h3>
-                                        </div>
-                                        <div>
-                                            @if (ViewData["PageActionText"] != null)
-                                            {
-                                                <a class="btn btn-success" href="@ViewData["PageActionUrl"]">
-                                                    @ViewData["PageActionText"]
-                                                </a>
-                                            }
-                                        </div>
-                                    </div>
-                                    <ejs-breadcrumb id="breadcrumb"
-                                                    separatorTemplate="@Html.Raw("<span class='fa-solid fa-angle-right'></span>")"></ejs-breadcrumb>
-                                </div>
-                            </div>
-                        </div>
-                        @RenderBody()
-                    </main>
+    @* <nav class="navbar sticky-top ">
+        <div class="container-fluid py-2 px-4">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="profile-wrapper">
+                <img class="profile-pic" src="~/favicon-32x32.png" />
+                <div class="titles d-flex flex-column ps-5">
+                    <header class="mb-0">Felosy Fen? The Expense Tracker</header>
                 </div>
             </div>
+            <div>
+                <i class="fa-solid fa-bell"></i>
+                <i class="fa-solid fa-message"></i>
+                <img class="profile-pic" src="~/profile-pic.jpg" />
+            </div>
         </div>
-    </div>
+    </nav> *@
+  @*
+
+   <main class="d-flex">
+         <section class="position-relative">
+            <partial name="_SideBar" />
+        </section>
+        <section class="main-content">
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="@(ViewData["isDashboard"] == null?"col-md-12":"col-md-12")">
+                        <main role="main" class="pb-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="d-flex flex-column mb-5">
+                                        <div class="d-flex mb-1">
+                                            <div class="flex-grow-1">
+                                                <h3 class="fw-bold">@ViewData["PageTitle"]</h3>
+                                            </div>
+                                            <div>
+                                                @if (ViewData["PageActionText"] != null)
+                                                {
+                                                    <a class="btn btn-success" href="@ViewData["PageActionUrl"]">
+                                                        @ViewData["PageActionText"]
+                                                    </a>
+                                                }
+                                            </div>
+                                        </div>
+                                        <ejs-breadcrumb id="breadcrumb"
+                                                        separatorTemplate="@Html.Raw("<span class='fa-solid fa-angle-right'></span>")"></ejs-breadcrumb>
+                                    </div>
+                                </div>
+                            </div>
+                            @RenderBody()
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    *@
 
     @* <footer class="border-top footer text-muted">
     <div class="container">
